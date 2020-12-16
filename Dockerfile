@@ -6,7 +6,7 @@ RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/ma
   apk add build-base bash dcron && \
   apk upgrade --available && \
   rm -rf /var/cache/apk/* && \
-  mkdir -p /swsd-data-extractor/exports/{log,errors}
+  mkdir /swsd-data-extractor
 RUN gem install bundler:2.1.4
 RUN bundle config --jobs 4
 
@@ -16,6 +16,7 @@ COPY . /swsd-data-extractor
 RUN bundle
 
 # Build cron jobs from config/schedule.rb
-RUN bundle exec whenever -c && bundle exec whenever --update-crontab && touch /swsd-data-extractor/exports/log/cron.log
+RUN bundle exec whenever -c && bundle exec whenever --update-crontab
+
 
 ENTRYPOINT crond -f && tail -f /swsd-data-extractor/exports/log/cron.log
