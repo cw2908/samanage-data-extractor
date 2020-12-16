@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "samanage"
-require "parallel"
 require "awesome_print"
 require "active_support/core_ext"
 require "logger"
@@ -48,8 +47,8 @@ task :extract_data do
   configuration_items = @samanage.configuration_items(options: @options)
                                  .uniq { |i| i["id"] }
   unless @full_run
-    contracts = contracts.select do |contract| 
-      DateTime.parse(contract["updated_at"]) >= DateTime.now.yesterday.beginning_of_day 
+    contracts = contracts.select do |contract|
+      DateTime.parse(contract["updated_at"]) >= DateTime.now.yesterday.beginning_of_day
     end
   end
 
@@ -215,3 +214,10 @@ task :extract_data do
     end
   end
 end
+
+Tip: Based on detected gems, the following RuboCop extension libraries might be helpful:
+  * rubocop-rake (http://github.com/rubocop-hq/rubocop-rake)
+
+You can opt out of this message by adding the following to your config (see https://docs.rubocop.org/rubocop/extensions.html#extension-suggestions for more options):
+  AllCops:
+    SuggestExtensions: false

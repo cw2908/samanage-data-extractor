@@ -6,7 +6,6 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
 
-gem "parallel", "~> 1.20"
 gem "samanage", "~> 2.1"
 
 gem "awesome_print", "~> 1.8", group: :development

@@ -1,12 +1,12 @@
 FROM ruby:2.6-alpine
 
-# Install
+# Install & create directories
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main && \
   apk update && apk upgrade && \
   apk add build-base bash dcron && \
   apk upgrade --available && \
   rm -rf /var/cache/apk/* && \
-  mkdir -p /swsd-data-extractor/exports/log
+  mkdir -p /swsd-data-extractor/exports/{log,errors}
 RUN gem install bundler:2.1.4
 RUN bundle config --jobs 4
 

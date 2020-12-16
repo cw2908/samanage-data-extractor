@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    build: .
+    environment:
+      - SOLARWINDS_TOKEN=abc123
+    # Map current dir to container directory.
+    # All output files are in ./exports/*.csv
+    volumes:
+      - .:/swsd-data-extractor

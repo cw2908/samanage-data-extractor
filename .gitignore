@@ -1,4 +1,6 @@
+.DS_Store
 **/*.csv
+**/*.log
 *.gem
 *.rbc
 /.config
