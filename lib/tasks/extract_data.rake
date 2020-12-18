@@ -214,10 +214,3 @@ task :extract_data do
     end
   end
 end
-
-Tip: Based on detected gems, the following RuboCop extension libraries might be helpful:
-  * rubocop-rake (http://github.com/rubocop-hq/rubocop-rake)
-
-You can opt out of this message by adding the following to your config (see https://docs.rubocop.org/rubocop/extensions.html#extension-suggestions for more options):
-  AllCops:
-    SuggestExtensions: false
