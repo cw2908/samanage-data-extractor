@@ -2,6 +2,7 @@
 
 require "samanage"
 require "awesome_print"
+require "active_support"
 require "active_support/core_ext"
 require "logger"
 
@@ -79,7 +80,8 @@ task :extract_data do
       "Termination at will?" => lookup_custom_field(record: record, field: "Termination at will?"),
       "Early termination cost" => lookup_custom_field(record: record, field: "Early termination cost"),
       "Automatic Renewal" => lookup_custom_field(record: record, field: "Automatic Renewal"),
-      "Transferability / reassignment of contract?" => lookup_custom_field(record: record, field: "Transferability / reassignment of contract?"),
+      "Transferability / reassignment of contract?" => lookup_custom_field(record: record,
+field: "Transferability / reassignment of contract?"),
       "Payment terms" => lookup_custom_field(record: record, field: "Payment terms"),
       "Invoice #" => lookup_custom_field(record: record, field: "Invoice #"),
       "Tags" => lookup_custom_field(record: record, field: "Tags"),
@@ -136,8 +138,10 @@ task :extract_data do
       "Can we modify?" => lookup_custom_field(record: record, field: "Can we modify?"),
       "Type of Authentication (User)" => lookup_custom_field(record: record, field: "Type of Authentication (User)"),
       "Software Platform" => lookup_custom_field(record: record, field: "Software Platform"),
-      "Continuous Integration Status (CI)" => lookup_custom_field(record: record, field: "Continuous Integration Status (CI)"),
-      "Continuous Deployment Status (CD)" => lookup_custom_field(record: record, field: "Continuous Deployment Status (CD)"),
+      "Continuous Integration Status (CI)" => lookup_custom_field(record: record,
+field: "Continuous Integration Status (CI)"),
+      "Continuous Deployment Status (CD)" => lookup_custom_field(record: record,
+field: "Continuous Deployment Status (CD)"),
       "VPN Required?" => lookup_custom_field(record: record, field: "VPN Required?"),
       "IPv6" => lookup_custom_field(record: record, field: "IPv6"),
       "DNSSEC" => lookup_custom_field(record: record, field: "DNSSEC"),
@@ -145,7 +149,8 @@ task :extract_data do
       "Data Integrity" => lookup_custom_field(record: record, field: "Data Integrity"),
       "Data Availability" => lookup_custom_field(record: record, field: "Data Availability"),
       "Hosting Type" => lookup_custom_field(record: record, field: "Hosting Type"),
-      "Data Storage Format: Flat Files" => lookup_custom_field(record: record, field: "Data Storage Format: Flat Files"),
+      "Data Storage Format: Flat Files" => lookup_custom_field(record: record,
+field: "Data Storage Format: Flat Files"),
       "Data Storage Format: MariaDB" => lookup_custom_field(record: record, field: "Data Storage Format: MariaDB"),
       "Data Storage Format: MSSQL" => lookup_custom_field(record: record, field: "Data Storage Format: MSSQL"),
       "Data Storage Format: Oracle" => lookup_custom_field(record: record, field: "Data Storage Format: Oracle"),
@@ -179,7 +184,8 @@ task :extract_data do
       "Privacy Banner" => lookup_custom_field(record: record, field: "Privacy Banner"),
       "Privacy Banner Reason" => lookup_custom_field(record: record, field: "Privacy Banner Reason"),
       "PII Acknowledgement Statement" => lookup_custom_field(record: record, field: "PII Acknowledgement Statement"),
-      "PII Acknowledgement Statement Reason" => lookup_custom_field(record: record, field: "PII Acknowledgement Statement Reason"),
+      "PII Acknowledgement Statement Reason" => lookup_custom_field(record: record,
+field: "PII Acknowledgement Statement Reason"),
       "Included in Enterprise Logging" => lookup_custom_field(record: record, field: "Included in Enterprise Logging"),
       "Enterprise Logging Reason" => lookup_custom_field(record: record, field: "Enterprise Logging Reason"),
       "Patch Update Subscription" => lookup_custom_field(record: record, field: "Patch Update Subscription"),
