@@ -12,7 +12,7 @@ gem "awesome_print", "~> 1.8", group: :development
 gem "rubocop", "~> 1.3", group: :development
 gem "rubocop-performance", "~> 1.9", group: :development
 
-gem "activesupport", "~> 6.0"
+gem "activesupport", "~> 6.1"
 
 gem "rake", "~> 13.0"
 gem "whenever", "~> 1.0"
